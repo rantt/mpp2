@@ -3,6 +3,14 @@ var Game = {
   h: 600
 };
 
+function rand (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// if (localStorage.getItem('atPlayer') === null) {
+  localStorage.setItem('atPlayer', rand(0,1000000) );
+// }
+
 // var w = 800;
 // var h = 600;
 
@@ -48,6 +56,9 @@ Game.Load.prototype = {
 
     //Load button for twitter
     this.game.load.image('twitter','assets/images/twitter.png');
+
+		this.game.load.spritesheet('tiles', 'assets/images/tiles2.png',32,32,2);
+    this.game.load.spritesheet('hero','assets/images/players.png',32,32,7);
 
     // Music Track
     // this.game.load.audio('music','soundtrack.mp3');
