@@ -42,6 +42,7 @@ Game.Play.prototype = {
 
     cursors = this.game.input.keyboard.createCursorKeys();
     // var myDataRef = new Firebase('https://tan6b7d70i7.firebaseio-demo.com/');
+    var fireRef = new Firebase('https://mpp2.firebaseio.com/');
 
 		FLOOR = 0;
 		WALL = 1;
@@ -97,8 +98,6 @@ Game.Play.prototype = {
       map.setCollision(WALL); //Black Empty Space
       layer.resizeWorld();
 
-
-
     // fireRef.child("player/uid").on("value", function(player) {
     //   console.log(player);
     // });
@@ -117,7 +116,7 @@ Game.Play.prototype = {
             this.moveTo(-1,0);
             this.direction = 'left';
             // fireRef.set({player: {direction: 'left', x: this.x, y: this.y, frame: this.frame,uid: this.uid}});
-            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid}
+            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid};
             fireRef.set(position);
             // fireRef.push({player: {direction: 'left', x: this.x, y: this.y, frame: this.frame},uid: this.uid});
           }
@@ -125,21 +124,21 @@ Game.Play.prototype = {
             this.moveTo(1,0);
             this.direction = 'right';
             // fireRef.set({player: {direction: 'right', x: this.x, y: this.y, frame: this.frame,uid: this.uid}});
-            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid}
+            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid};
             fireRef.set(position);
           }
           else if ( (cursors.up.isDown || upArrow)) {
             this.moveTo(0,-1);
             this.direction = 'up';
             // fireRef.set({player: {direction: 'up', x: this.x, y: this.y, frame: this.frame, uid: this.uid}});
-            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid}
+            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid};
             fireRef.set(position);
           }
           else if ( (cursors.down.isDown || downArrow)) {
             this.moveTo(0,1);
             this.direction = 'down';
             // fireRef.set({player: {direction: 'down', x: this.x, y: this.y, frame: this.frame, uid: this.uid}});
-            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid}
+            position[player.uid] = {direction: this.direction, x: this.x, y: this.y, frame: this.frame,uid: this.uid};
             fireRef.set(position);
           }
         } 
