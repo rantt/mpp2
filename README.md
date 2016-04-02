@@ -1,7 +1,7 @@
 #Multiplayer Part 2 (#onegameaweek - Game 11)
 
 Multiplayer movement example.  Shows remote user movements and basic chat.
-Multiplayer communication handled by firebase
+Multiplayer communication handled by [firebase](http://firebase.com)
 
 ![screenshot](screenshots/mpp2.gif)
 
